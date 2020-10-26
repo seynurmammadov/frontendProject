@@ -1,0 +1,34 @@
+#flower {
+  .flower {
+    @extend %section;
+    margin-bottom: 70px;
+    .heading {
+      @extend %textSpecial;
+      max-width: 100%;
+      text-align: center;
+      p {
+        max-width: 620px;
+        text-align: center;
+        margin: auto;
+      }
+    }
+    .flower-content {
+      .card {
+        overflow: hidden;
+        border: 0;
+        .img {
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          img {
+            max-width: 222px;
+          }
+        }
+        .card-body {
+          @extend %card-body;
+        }
+      }
+    }
+  }
+}

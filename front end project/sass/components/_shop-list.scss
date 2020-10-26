@@ -1,0 +1,116 @@
+#shop-list {
+  .shop-list {
+    @extend %head-page;
+    .shop-list-content {
+      @extend %section;
+      @extend %product;
+      .shop-products {
+        margin: 0;
+        margin-bottom: 140px;
+        .card {
+          .new {
+            @extend %bandage;
+            background-color: $colorMoothRed;
+            color: white;
+          }
+          .add-to-card-hov {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: white, $alpha: 0.8);
+            top: 0;
+            opacity: 0;
+            transition: 0.3s;
+            @extend %card-body;
+            display: flex;
+            align-items: center;
+            .center {
+              width: 100%;
+              .button {
+                height: 50px !important;
+                @extend %btn-font;
+                @extend %button-red;
+              }
+            }
+          }
+          &:hover {
+            img {
+              transform: none;
+            }
+            .add-to-card-hov {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .shop-slider {
+        margin: 0;
+        margin-bottom: 140px;
+        @extend %slider-focus-none;
+        i[class*="fa-caret"] {
+          font-size: 23px;
+          top: 0;
+          position: absolute;
+          z-index: 10;
+          transition: color 0.4s;
+          color: rgba($color: #000000, $alpha: 0.3);
+          &:hover {
+            color: rgba($color: #000000, $alpha: 1);
+          }
+        }
+        i[class*="right"] {
+          right: 15px;
+        }
+        i[class*="left"] {
+          right: 33px;
+        }
+      }
+      .slider-text-absolute {
+        position: absolute !important;
+        top: 0;
+        left: 15px;
+      }
+      .col-2-products {
+        .card {
+          .img {
+            height: 26vh;
+          }
+          &:hover {
+            .price {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  #shop-list {
+    .card-body {
+      .bottom {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #shop-list {
+    .shop-products {
+      .card {
+        .img {
+          height: 80vh !important;
+        }
+      }
+    }
+    .col-2-products {
+      .card {
+        .img {
+          height: 80vh !important;
+        }
+      }
+    }
+  }
+}
